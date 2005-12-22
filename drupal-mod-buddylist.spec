@@ -3,11 +3,11 @@ Summary:	Drupal Buddylist Module
 Summary(pl):	Modu³ Buddylist dla Drupala
 Name:		drupal-mod-%{modname}
 Version:	4.6.0
-Release:	0.1
+Release:	0.4
 License:	GPL v2
 Group:		Applications/WWW
-Source0:	http://drupal.org/files/projects/%{modname}-%{version}.tar.gz
-# Source0-md5:	22a9370ae0ac4937283e2970513852aa
+Source0:	http://drupal.org/files/projects/%{modname}-cvs.tar.gz
+# Source0-md5:	35309eb43b0b37f9a69c591dbde83310
 URL:		http://drupal.org/project/buddylist
 BuildRequires:	rpmbuild(macros) >= 1.194
 BuildArch:	noarch
@@ -36,6 +36,7 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_moddir},%{_podir}}
 
 install *.module $RPM_BUILD_ROOT%{_moddir}
+install contrib/buddylist_access/*.module $RPM_BUILD_ROOT%{_moddir}
 cp -a po/*.po $RPM_BUILD_ROOT%{_podir}
 
 %clean
@@ -54,6 +55,16 @@ For Postgresql file is:
 
 EOF
 fi
+
+%triggerpostun -- %{name} < 4.6.0-0.3
+%banner -e %{name} <<'EOF'
+You need to update your database:
+ALTER TABLE buddylist ADD COLUMN label varchar(255) NOT NULL default 'all';
+ALTER TABLE buddylist ADD INDEX uid (uid);
+ALTER TABLE buddylist ADD UNIQUE `uid-buddy-label` (uid,buddy,label);
+ALTER TABLE buddylist ADD INDEX label (label);
+ALTER TABLE buddylist DROP PRIMARY KEY;
+EOF
 
 %files
 %defattr(644,root,root,755)
