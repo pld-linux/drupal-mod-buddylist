@@ -3,13 +3,14 @@ Summary:	Drupal Buddylist Module
 Summary(pl):	Modu³ Buddylist dla Drupala
 Name:		drupal-mod-%{modname}
 Version:	4.6.0
-Release:	0.1
+Release:	0.2
 License:	GPL v2
 Group:		Applications/WWW
 Source0:	http://drupal.org/files/projects/%{modname}-%{version}.tar.gz
 # Source0-md5:	22a9370ae0ac4937283e2970513852aa
 URL:		http://drupal.org/project/buddylist
 BuildRequires:	rpmbuild(macros) >= 1.194
+Requires:	drupal >= 4.6.0
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
