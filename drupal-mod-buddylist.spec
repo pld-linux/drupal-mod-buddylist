@@ -1,6 +1,6 @@
 %define		modname buddylist
 Summary:	Drupal Buddylist Module
-Summary(pl.UTF-8):   Moduł Buddylist dla Drupala
+Summary(pl.UTF-8):	Moduł Buddylist dla Drupala
 Name:		drupal-mod-%{modname}
 Version:	4.6.0
 Release:	0.2
