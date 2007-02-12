@@ -1,6 +1,6 @@
 %define		modname buddylist
 Summary:	Drupal Buddylist Module
-Summary(pl):	Modu≥ Buddylist dla Drupala
+Summary(pl.UTF-8):   Modu≈Ç Buddylist dla Drupala
 Name:		drupal-mod-%{modname}
 Version:	4.6.0
 Release:	0.2
@@ -23,10 +23,10 @@ This module allows users to put each other on a personal 'Buddy List',
 also enabling them to keep up with their friend's postings via the 'My
 Friend's Blogs' block.
 
-%description -l pl
-Ten modu≥ pozwala uøytkownikom umieszczaÊ siebie nawzajem na
-prywatnych "Buddy Lists", umoøliwiaj±c im takøe otrzymywanie postÛw
-przyjaciÛ≥ poprzez blok "My Friend's Blogs".
+%description -l pl.UTF-8
+Ten modu≈Ç pozwala u≈ºytkownikom umieszczaƒá siebie nawzajem na
+prywatnych "Buddy Lists", umo≈ºliwiajƒÖc im tak≈ºe otrzymywanie post√≥w
+przyjaci√≥≈Ç poprzez blok "My Friend's Blogs".
 
 %prep
 %setup -q -n %{modname}
